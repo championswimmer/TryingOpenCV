@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ "${1}" == "ShowingImage" ]
+then
+	make ShowingImage
+	out/ShowingImage assets/stuff.jpg
+fi
+
+if [ "${1}" == "PlayingVideo" ]
+then
+	make PlayingVideo
+	out/PlayingVideo assets/test.avi
+fi
