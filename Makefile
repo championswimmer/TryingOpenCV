@@ -7,20 +7,25 @@ SRC = src
 OUT = out
 	
 ####### Showing Image ##########
-OBJS =		$(SRC)/ShowingImage.o
-TARGET =	$(OUT)/ShowingImage
-TARGETS += $(TARGET)
 
-$(TARGET):	$(OBJS)
+ShowingImage:	$(SRC)/ShowingImage.o
 	mkdir -p $(OUT)
-	$(CXX) -o $(TARGET) $(OBJS) $(LIBS)
+	$(CXX) -o $(OUT)/ShowingImage $(SRC)/ShowingImage.o $(LIBS)
+
+################################
+
+####### Playing Video ##########
+
+PlayingVideo:	$(SRC)/PlayingVideo.o
+	mkdir -p $(OUT)
+	$(CXX) -o $(OUT)/PlayingVideo $(SRC)/PlayingVideo.o $(LIBS)
 
 ################################
 
 
-all:	$(TARGETS)
+all:	ShowingImage PlayingVideo
 
 OBJFILES = $(shell ls $(SRC)/*.o)
 clean:
-	rm -f $(OBJFILES) $(TARGETS)
+	rm -f $(OBJFILES)
 	rm -rf out
