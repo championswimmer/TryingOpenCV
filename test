@@ -11,3 +11,9 @@ then
 	make PlayingVideo
 	out/PlayingVideo assets/test.avi
 fi
+
+if [ "${1}" == "GaussianSmoothening" ]
+then
+	make GaussianSmoothening
+	out/GaussianSmoothening assets/stuff.jpg
+fi

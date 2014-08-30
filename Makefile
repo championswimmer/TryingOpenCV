@@ -22,8 +22,15 @@ PlayingVideo:	$(SRC)/PlayingVideo.o
 
 ################################
 
+####### Playing Video ##########
 
-all:	ShowingImage PlayingVideo
+GaussianSmoothening:	$(SRC)/GaussianSmoothening.o
+	mkdir -p $(OUT)
+	$(CXX) -o $(OUT)/GaussianSmoothening $(SRC)/GaussianSmoothening.o $(LIBS)
+
+################################
+
+all:	ShowingImage PlayingVideo GaussianSmoothening
 
 OBJFILES = $(shell ls $(SRC)/*.o)
 clean:
